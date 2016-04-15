@@ -98,8 +98,85 @@ In this Assignment, \textit{\textbf{Problem 1 - Signal Processing for radar appl
 \subsection{Fourier Transform and Series}
 
 
-\subsection{Discussion}
+\begin{figure}[!htbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/dc}
+    \caption{DC Level function}
+%    \label{fig:leakExplain}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/dirac}
+    \caption{Dirac Function}
+%    \label{fig:leak}
+  \end{minipage}
+\end{figure}
 
+\begin{figure}[!htbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/cosine}
+    \caption{cosine with phase zero}
+%    \label{fig:leakExplain}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/sine}
+    \caption{sine with phase $\pi$/2}
+%    \label{fig:leak}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/rect_narrow}
+    \caption{Narrow rectangular function}
+%    \label{fig:leakExplain}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/rect_broad}
+    \caption{Broad rectangular function}
+%    \label{fig:leak}
+  \end{minipage}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/sinc_narrow}
+    \caption{Narrow sinc function}
+%    \label{fig:leakExplain}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/sinc_broad}
+    \caption{Broad sinc function}
+%    \label{fig:leak}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/white}
+    \caption{White Noise}
+%    \label{fig:leakExplain}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+%    \includegraphics[width=\textwidth]{images/rect_broad}
+%    \caption{Broad rectangular function}
+%    \label{fig:leak}
+  \end{minipage}
+\end{figure}
+
+
+\subsection{Discussion}
+The spectrum of real valued, even functions has no imaginary part, whereas the spectrum of non-even function might have imaginary parts.
 
 %%%%%%%%%%%%%%%%% TASK 2 %%%
 \section{Sampling}
@@ -184,7 +261,7 @@ Whereas the power of the signal is the squared magnitude of the frequency (\text
 
 The problem that happens, when the truncation does not happen exactly at the period is, that the spectrum becomes "less sharp" (c.f. fig. \ref{fig:leak}), which means that the main peak is accompanied by smaller peaks at the bottom part of the diagram. Also, the main peak is a little bit lower. This phenomenon is called leakage.
 
-\subsection{Straddle Los}
+\subsection{Straddle Loss}
 The problem with leakage for radar signals, is that leakage significantly reduces the Signal-to-Noise-Ratio which makes it "harder" to detect the proper signal, as can be seen in fig. \ref{fig:leak} and fig. \ref{fig:leakExplain}. This is also called "straddle-loss". It is basically a consequence of not appropriate or good enough sampling.
 
 %noise, and bad for radar
