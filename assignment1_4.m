@@ -22,3 +22,8 @@ hold on;
 stem(u,abs(Xs2));
 xlabel('u [Hz]');
 ylabel('Amplitude');
+
+legend('A=1,f=200*du','A=4,f=100*du', 'A=5,f=300*du')
+
+title('Amplitude Diagram')
+set(gcf,'Color','w')
