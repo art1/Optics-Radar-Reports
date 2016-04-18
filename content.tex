@@ -94,12 +94,26 @@ In other words, it is the peak signal, which means the maximum achievable signal
 \section{CCD Elements for ALIS}
 ALIS is an Auroral Large Imaging System proposed by Åke Steen in 1989 to automate auroral imaging stations in Scandinavia. The following chapters describe different elements of the CCD chosen for this specific project \citep{brandstrom2003auroral}.
 
-\subsection{optical system}
-The optical system of ALIS 
+\subsection{Optical system}
+The optical system of ALIS had different very specific constraints in the beginning of the project, as replaceable front lenses, a filter wheel in front of the lenses and a changeable field of view. These specifications were cut down due to budget issues and the final set up of the optical system is given in the picture below.
 
-\subsection{interference filters}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/optsys}
+		\caption{(A) replacable front lens, (B) telecentric lenses to have parallel light rays coming in, (C) filter holder, (D) field-lens, (E) \& (F) close up lenses, (G) Camera lens, (H) Window of CCD enclosure, (I) CCD sensor \citep[c.f.][Fig. 3.7, modified]{brandstrom2003auroral}}
+		 \label{fig:optsys}
+\end{figure}
 
-\subsection{camera positioning system}
+\subsection{Interference filters}
+The interference filters mounted in the filter holder (c.f. Fig. \ref{fig:optsys}.(C)) used in ALIS are so-called Fabry-Perot filters. They are narrow-band filters to enable spectroscopic imaging of different wavelength. Since these filters require the incoming light to be almost perfectly normal to the filter plane, the aforementioned tele-centric must be used.
+Due to this fact in ALIS the filters are desired to be insensitive against the angle of incoming rays, as well as having a wide enough bandwidth to pass the desired wavelength at all angles, which is why the filters are usually custom made for a specific application, and therefore are quite expensive. \par
+In case of ALIS, the filter wheel contains six different filters in the filter wheel, namely 5577Å (O($^1$S)), 6300Å (O($^1$D)), 6230Å, 5324Å, 4278Å and an empty filter box for white light. Using the appropriate filter, different areas of application are covered, e.g. meteor studies, background light filters, LIDAR and auroral emission (mainly using the N$^2_+$ 1Neg. filter)\citep{brandstrom2003auroral}.
+
+\subsection{Camera positioning system}
+Since ALIS uses a non-changeable FOV, the imager must be moved to comply with different imaging modes, as there are the tomographic mode, maximum sky coverage mode or spacecraft foot-point tracking. This is why not a simple azimuth/elevation system is used, but a frame-based system was developed, using three frames mounted in each other, where the imager is mounted on the innermost frames, while the two innermost frames are mounted on perpendicular axes. The frames itself are moved with the help of stepper motors.
+
+Using this system one can avoid the cable wrapping problem and keep the cables nice and short, but still reach all regions in the sky.
+
 
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
