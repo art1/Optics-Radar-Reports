@@ -1,7 +1,7 @@
 
 %%%%%%%%%%%%%%%%% Introduction to the Assignment %%%
 
-In this Assignment, \textit{\textbf{Problem 2 - Problems Optics}}, ...
+In this Assignment, \textit{\textbf{Problem 2 - Problems Optics}}, multiple topics concerning auroral imaging are discussed. First, an introduction of CCDs is given, followed by a detailed explanation of the Auroral Large Imaging System, its scientific results and a comparison to imaging systems in orbit is given.
 
 
 %%%%%%%%%%%%%%%%% TASK 1 %%%
@@ -37,11 +37,44 @@ Due to the photo-electric effect, incoming photons can now generate electron-hol
 %%%%%%%%%%%%%%%%% TASK 2 %%%
 \section{CCD Parameters}
 
-\subsection{spectral radiant incidence}
+\subsection{Spectral radiant incidence}
+The spectral radiant incidence, also called irradiance, is the radiant power incident per unit area onto a target and is denoted as \textit{E}. The unit area in this case is the CCD area.
+Assuming only small incidence angles and according to Brändström \citep{brandstrom2003auroral} the spectral radiant incidence $E_{\gamma_i}$ is given by:
+\begin{equation}
+\centering
+	\label{eq:irradiance}
+	E_{\gamma_i} = T \frac{10^{10}I}{16 {f_{\#}^{2}}} 		
+	\hspace{10mm} \si{[{photons} \per\second\meter\squared]}
+\end{equation}
+where $I$ defines the column emission line, $T$ the transmittance and  $f_{\#}$ the ratio between focal length and aperture stop \citep{brandstrom2003auroral}.
 
-\subsection{number of incident photons}
 
-\subsection{quantum efficiency}
+
+\subsection{Number of incident photons}
+The number of incident photons is the number of photons hitting the image plane and can be denoted as
+\begin{equation}
+\centering
+	\label{eq:irradiance}
+	n_{\gamma_i} = E_{\gamma_i} t_{int} A_i
+	\hspace{10mm} \si{[{photons}]}
+\end{equation}
+
+where $t_{int}$ represents the integration time in seconds.
+For a CCD sensor with area $A_{CCD}$ the equation is respectively
+
+\begin{equation}
+\centering
+	\label{eq:irradiance}
+	n_{\gamma_{CCD}} = n_{\gamma_i} T_w T_{CCD} \frac{A_{CCD}}{A_i}
+	\hspace{10mm} \si{[{photons}]}
+\end{equation}
+
+with $T_w$ the transmittance of the CCD-protecting window and $T_{CCD}$ the transmittance of the CCD substrate.
+
+The number of incident photons can also be calculated for one single pixel of the CCD \citep{brandstrom2003auroral}.
+
+
+\subsection{Quantum efficiency}
 Quantum Efficiency (QE) describes the ratio between the photons hitting the CCD and the photons that are actually detected or collected \citep{hoymorksensors}. The Quantum Efficiency can vary throughout the band-pass\footnote{total spectral range for which a detector is sensitive}, thus having different efficiencies for different colors. Modern CCD's have a band-pass of about 3000 to 10000 Å\footnote{1 {Ångström} equals $10^{-10}$ m} and can reach a QE of up to 90\%, while having a QE of 60\% and more for over two thirds of the spectrum \citep{howellCCD}.
 
 %https://www.noao.edu/meetings/gdw/files/Howell_CCDs.pdf
@@ -56,7 +89,7 @@ At high signal levels the most noise occurs due to pixel-to-pixel sensitivity, w
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=\linewidth]{images/noise}
+	\includegraphics[width=0.8\linewidth]{images/noise}
 		\caption{Noise plotted as function of an 20x20 input array \citep[c.f.][fig. 6.24]{hoymorksensors} }
 		 \label{fig:noise}
 \end{figure}
@@ -79,10 +112,9 @@ In other words, it is the peak signal, which means the maximum achievable signal
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.6\linewidth]{images/dynrange}
-		\caption{Dynamic Range and its Variables\protect\footnotemark}
+		\caption{Dynamic Range and its Variables \citep[c.f.][\href{https://micro.magnet.fsu.edu/primer/digitalimaging/concepts/images/dynamicrangefigure1.jpg}{Dynamic Range Figure}]{ccdimaging} }
 		 \label{fig:dynrange}
 \end{figure}
-\footnotetext{source: \url{https://micro.magnet.fsu.edu/primer/digitalimaging/concepts/images/dynamicrangefigure1.jpg}}
 
 
 
@@ -168,14 +200,14 @@ The first that one may notice is the different construction. The on-board camera
 The three different wavelength that can be observed with the two on-board cameras are 4278Å (N$_2^+$1N), 5577Å (OI) and 6700Å (N$_2$1P), which is similar to the ones used in ALIS. The advantage of ALIS is in this case that, with movable filters the number of observable emission lines can be much higher, whereas the filters used in the satellite have to be as small and as light as possible, to reduce launch costs \citep{obuchi2008initial}.
 The filters used in the INDEX satellite differ very slightly from the ones used in REIMEI, namely 4282Å, 5580Å and 6717Å \citep{sakanoi2003development}.
 
-Furthermore, another important aspect are the different FOVs. Both satellites use an FOV of 7.6°, while the ALIS system uses 50° for more coverage. This small FOV enables the satellites to observe even very fine aurora emissions, with an footprint area of 70km square, if assumed that auroras are at about 110km above ground \citep{obuchi2008initial}.
+Furthermore, another important aspect are the different FOVs. Both satellites use an FOV of 7.6°, while the ALIS system uses 50° for more coverage. This small FOV enables the satellites to observe even very fine auroras, with an total footprint area of 70km square, if assumed that auroras are at about 110km above ground \citep{obuchi2008initial}.
 Also, the Quantum Efficiency of the sensors used differ, while the sensor size is equal for all sensors with 1024x1024 pixels. The onboard satellites have a QE of about 0.6, while the ALIS CCD goes up to 0.9, obviously depending on the respective emission lines observed \citep{obuchi2008initial,brandstrom2003auroral}.
 
 In general using image sensors in space poses more risks and technical challenges than using them on earth, since one has to take care not only about the overall structure but also for appropriate power supplies and thermal control, because the noise in captured images increases with temperature, as has been explained during the first chapters of this report. Still, the big advantage is the possibility of large scale observations of large events on earth or in the earth atmosphere, as would not be possible from earth.
 
 %%%%%%%%%%%%%%%%% TASK 5 BONUS %%%
 \section{Literature Survey}
-
+Since the available literature on thermospheric neutral wind and meteor studies with the ALIS system and its scientific results date back to 2003, this survey will
 
 
 
