@@ -105,6 +105,7 @@ The optical system of ALIS had different very specific constraints in the beginn
 \end{figure}
 
 \subsection{Interference filters}
+\label{interference}
 The interference filters mounted in the filter holder (c.f. Fig. \ref{fig:optsys}.(C)) used in ALIS are so-called Fabry-Perot filters. They are narrow-band filters to enable spectroscopic imaging of different wavelength. Since these filters require the incoming light to be almost perfectly normal to the filter plane, the aforementioned tele-centric must be used.
 Due to this fact in ALIS the filters are desired to be insensitive against the angle of incoming rays, as well as having a wide enough bandwidth to pass the desired wavelength at all angles, which is why the filters are usually custom made for a specific application, and therefore are quite expensive. \par
 In case of ALIS, the filter wheel contains six different filters in the filter wheel, namely 5577Å (O($^1$S)), 6300Å (O($^1$D)), 6230Å, 5324Å, 4278Å and an empty filter box for white light. Using the appropriate filter, different areas of application are covered, e.g. meteor studies, background light filters, LIDAR and auroral emission (mainly using the N$^2_+$ 1Neg. filter)\citep{brandstrom2003auroral}.
@@ -118,21 +119,45 @@ Using this system one can avoid the cable wrapping problem and keep the cables n
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
 \section{Scientific results of ALIS}
+Due to the complex nature of the Auroral Large Imaging System project, there were various different scientific objectives pursued, of which some are now looked deeper into. \todo{wtf english}
+
+\subsection{Estimation of auroral electron spectra}
+The conventional choice of emission lines for monochromatic auroral imaging used to be 6300Å (O($^1$D)) emission line, as mentioned in chapter \ref{interference}. But since this emission line has a long radiative lifetime and is not available in lower altitudes, the N$_2^+$ 1Neg. 4278Å line is used as well for the characteristic energy of incoming electrons \citep{brandstrom2003auroral}.
+
+At March 25th, 1998 it was also discovered, that the emission line of O(3p$^3$P) at 8446Å, especially the morphology of the aurora is similar to that of N$_2^+$ 1Neg. 4278Å \citep{brandstrom2003auroral}.
+Newer and more extensive studies, performed by Gustavsson et al. in 2001 \citep{brandstrom2003auroral}, have shown that with the inverse of the N$_2^+$ 1Neg. 4278Å altitude distribution the characteristics of primary electron spectra can be estimated with a time resolution of about 10s for discrete auroral structures. 
+To retrieve useful results for variations slower than 100s the measurements of 4278Å, 6300Å and 8446Å emission lines can be combined, but according to Gustavsson 2D measurements are needed to distinguish between spatial and temporal variations, especially for these kinds of events \citep{brandstrom2003auroral}.
 
 
-\subsection{estimation of auroral electron spectra;}
+\subsection{Auroral vorticity}
+The auroral arc that extends from east to west is often destroyed by instability processes, that also create vortex-like structures, whereas the vorticity $\zeta$ is defined as the rotation in a fluid, denoted by $\zeta = \nabla \times \textbf{u}$ \citep{brandstrom2003auroral,pudovkin1997vorticity}.
+\begin{figure}[!htbp]
+\captionsetup{width=0.6\textwidth}
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/vortex}
+		\caption{ALIS data showing a vortex formation, gathered at the Kiruna station at 5577Å (\citep[c.f.][Fig. 14a, modified]{pudovkin1997vorticity})}
+		 \label{fig:vortex}
+\end{figure}
+Using early ALIS image data as in Fig. \ref{fig:vortex} Pudovkin was able to study the vorticity in magnetospheric plasma and its effects on auroras.
+Amongst other things, these studies were done to determine distributions of electric fields and currents in the magnetosphere as well as observing MHD\footnote{Magnetohydrodynamical} instabilities, which are basically responsible for the turbulences. Unfortunately, due to the insufficient temporal resolution the ALIS project was not perfectly suited for this kind of research \citep{brandstrom2003auroral}.
 
-\subsection{auroral vorticity}
+\subsection{Ionospheric trough}
+An ionospheric trough is a region in the F layer where the plasma density is significantly decreased \citep{spacewiki}. This trough is usually observed with the more direct measurement methods of the EISCAT radar, but it was occasionally detected that ALIS is able to provide supporting measurements, which correlate very well with extrapolated EISCAT measurements concerning the position of diffuse aurora in the ionospheric trough. The result of these observations was the discovery that early proposals for the linear equations of trough motion were not valid in the observed latitude range \citep{brandstrom2003auroral}.
 
-\subsection{ionospheric trough}
+\subsection{Daytime auroral imaging}
+Usually the ALIS system is shut down during the arctic day season, from 15th April to August/September, since the nights are too bright at these latitudes for ALIS performing its measurements. Nevertheless, a prototype imaging spectrometer has been built to enable ALIS for daylight aurora imaging \citep{brandstrom2003auroral}.
 
-\subsection{daytime auroral imaging}
+This prototype used capacitance-stabilised Fabry-Perot etalons as well as narrow-band interference filters of 2Å. By fine-tuning the spectrometer with the etalons to 6300Å, it was possible to reconstruct a 2D sky image. Still, the emission line was only roughly estimated, since the solar spectrum had to be substracted from the measurements and a previously published spectrum was used to perform the subtraction instead of using a specific measurement of the solar spectrum. Still, with slight modifications this instrument could be used for daylight aurora imaging, but with only low temporal resolution \citep{brandstrom2003auroral}.
 
-\subsection{auroral events and thermospheric neutral wind}
+\subsection{Auroral events and thermospheric neutral wind}
+The Magnetosphere and the thermo- and ionosphere are coupled by electric fields and field-aligned currents.
+Combining the ALIS high-res aurora images with the neutral wind vector measurements of the Fabry-Perot interferometer leads to a better understanding the mentioned coupling.\\
+Experiments and measurements have been carried out since the 1980s and provided some interesting results. It was discovered that the neutral wind was oriented mostly northward when a stable aurora arc was seen. An in-depth analysis revealed that the wind is directed perpendicular to the arc, with low wind speed in parallel. Also, diffuse auroral structures seem to drift westward, when the wind turns in eastern direction, at around 19:30 UTC \citep{brandstrom2003auroral}.
 
-\subsection{meteor studies}
-
-
+\subsection{Meteor studies}
+Another interesting aspect of the ALIS project is the ability to observe different ablation phenomena in meteoroid trails passing the earth, where the easiest observable meteoroid constituents are Natrium and Calcium, since they have very strong emission lines at 5893Å and 4227Å. To observe these fast occurring events the ALIS imagers worked in a matter, so that always at least two imagers had open shutters, to overlap exposures and capture meteoroid trails.
+Different studies have been performed, especially on the Leonid showers, whereas not all studies have been successful due to cloudy weather conditions.\\
+One of the more surprising results was the detection of a fast fainting emission line in 4227Å at a height of 160km and 130km. These emission lines were explained only long after the initial measurement, stating that the water bound to the meteoroid is heated up very fast and released suddenly in a bright process, resulting in very bright meteoroid trails.
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
 \section{CCD comparison of ALIS and onboard Earth auroral imaging}
