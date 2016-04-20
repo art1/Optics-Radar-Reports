@@ -1,3 +1,6 @@
+### for sanity's sake, not included literature which might have some copyright pitfalls ###
+literature_nonindexed/
+
 ### Texpad ###
 .texpadtmp/
 .texpadtmp

@@ -17,6 +17,9 @@
 \usepackage{float}
 \usepackage{listings}
 \usepackage{enumitem}
+\usepackage{caption}
+\usepackage{siunitx}
+%\sisetup{detect-all}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
@@ -96,5 +99,8 @@
 
 %%%%%%%%%%%%%%%%% include content %%%%%%%%%%%%%
 \include{content}
+% if bibliography needed, uncomment the following lines
+\bibliographystyle{plainnat}
+\bibliography{biblist}
 %%%%%%%%%%%%%%%%% include content end %%%%%%%%%
 \end{document}
