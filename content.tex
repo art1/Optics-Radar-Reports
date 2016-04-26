@@ -7,7 +7,9 @@ In this Assignment, \textit{\textbf{Problem 2 - general radar theory}}, ...
 %%%%%%%%%%%%%%%%% TASK 1 %%%
 \section{Operational frequency for scientific radar}
 
+
 \subsection{Frequency ranges}
+
 
 \subsection{Information gathered by radar measurement}
 
@@ -15,8 +17,65 @@ In this Assignment, \textit{\textbf{Problem 2 - general radar theory}}, ...
 
 %%%%%%%%%%%%%%%%% TASK 2 %%%
 \section{The radar equation}
+To derive the radar equation one starts with the assumption of an isotropic radiation source. Therefore the power density at a distance R is denoted as
 
 
+\begin{equation}
+\label{eq:iso}
+	\centering
+	Q_{i} = \frac{P_t}{4 \pi R^2} \qquad \bigg[\frac{W}{m^2} \bigg]
+\end{equation}
+
+Since usually radar is focused in one specific direction, the equation is multiplied with the Gain G of the antenna
+
+\begin{equation}
+\label{eq:dir}
+	\centering
+	Q_{i} = \frac{P_t G}{4 \pi R^2} \qquad \bigg[\frac{W}{m^2} \bigg]
+\end{equation}
+
+When the radiated power now hits a target, a fraction of the power is reflected, or \textit{re-radiated}. This reradiated power is depending on the cross-section $\sigma$ of the hit target. So the received Power density at the antenna is 
+
+\begin{equation}
+\label{eq:rePowDen}
+	\centering
+	Q_{re} = \frac{Q_i \sigma}{4\pi R^2} = \frac{P_t}{4 \pi R^2} \frac{\sigma}{4\pi R^2} \qquad \bigg[\frac{W}{m^2} \bigg]
+\end{equation}
+
+But this received Power is now again dependent on the antenna gain, which is in this case also depending on the antenna effective area $A_{eff}$
+
+\begin{equation}
+\label{eq:rePow}
+	\centering
+	P_{r} = Q_{re} A_{eff} = \frac{P_t}{4 \pi R^2} \frac{\sigma}{4\pi R^2} A_{eff}\qquad [W]
+\end{equation}
+
+The antenna effective area can now be expressed with the help of the antenna gain. The derivation of the gain is not shown here, but it can be derived using the effective area of a Hertzian dipole and the assumption that the antenna perfectly absorbs all received power.\par
+This leads to the equation for the antenna effective area, which is depending on the antenna gain and the wavelength $\lambda $ of the used frequency.
+
+\begin{equation}
+\label{eq:Aeff}
+	\centering
+	A_{eff} = G \frac{\lambda^2}{4\pi} \qquad [m^2]
+\end{equation}
+
+Inserting this relation in equation \ref{eq:rePow} leads to the so-called Radar Equation, the total received power of the antenna.
+
+\begin{equation}
+\label{eq:radEq}
+	\centering
+	P_{r} = P_t \frac{\rho_a^2 A^2 }{4 \pi R^2} \qquad [W]
+\end{equation}
+
+where $\rho_{a} $ is the antenna efficiency, defined as
+
+\begin{equation}
+\label{eq:radEq}
+	\centering
+	\rho_a = \frac{A_{eff}}{A}
+\end{equation}
+
+with $A$ being the total antenna area.
 
 %%%%%%%%%%%%%%%%% TASK 3 %%%
 \section{Cross section calculation}
