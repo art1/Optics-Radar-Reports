@@ -6,9 +6,12 @@ In this Assignment, \textit{\textbf{Problem 2 - general radar theory}}, ...
 
 %%%%%%%%%%%%%%%%% TASK 1 %%%
 \section{Operational frequency for scientific radar}
+The operational frequency for a scientific radar is highly depending on the application and the type of the target. If for example the ionosphere, a so-called soft-target is to be observed, the range resolution of the radar plays a more important role than for example when a hard target is wanted. 
 
 
 \subsection{Frequency ranges}
+According to \todo{add reference ti that oslo presentation} ISR uses frequencies between 50MHz and 2 GHz
+
 
 
 \subsection{Information gathered by radar measurement}
@@ -39,7 +42,7 @@ When the radiated power now hits a target, a fraction of the power is reflected,
 \begin{equation}
 \label{eq:rePowDen}
 	\centering
-	Q_{re} = \frac{Q_i \sigma}{4\pi R^2} = \frac{P_t}{4 \pi R^2} \frac{\sigma}{4\pi R^2} \qquad \bigg[\frac{W}{m^2} \bigg]
+	Q_{re} = \frac{Q_i \sigma}{4\pi R^2} = \frac{P_t G}{4 \pi R^2} \frac{\sigma}{4\pi R^2} \qquad \bigg[\frac{W}{m^2} \bigg]
 \end{equation}
 
 But this received Power is now again dependent on the antenna gain, which is in this case also depending on the antenna effective area $A_{eff}$
@@ -47,7 +50,7 @@ But this received Power is now again dependent on the antenna gain, which is in 
 \begin{equation}
 \label{eq:rePow}
 	\centering
-	P_{r} = Q_{re} A_{eff} = \frac{P_t}{4 \pi R^2} \frac{\sigma}{4\pi R^2} A_{eff}\qquad [W]
+	P_{r} = Q_{re} A_{eff} = \frac{P_t G}{4 \pi R^2} \frac{\sigma}{4\pi R^2} A_{eff}\qquad [W]
 \end{equation}
 
 The antenna effective area can now be expressed with the help of the antenna gain. The derivation of the gain is not shown here, but it can be derived using the effective area of a Hertzian dipole and the assumption that the antenna perfectly absorbs all received power.\par
@@ -64,13 +67,13 @@ Inserting this relation in equation \ref{eq:rePow} leads to the so-called Radar 
 \begin{equation}
 \label{eq:radEq}
 	\centering
-	P_{r} = P_t \frac{\rho_a^2 A^2 }{4 \pi R^2} \qquad [W]
+	P_{r} = P_t \frac{\rho_a^2 A^2 }{4 \pi R^2} \sigma \qquad [W]
 \end{equation}
 
 where $\rho_{a} $ is the antenna efficiency, defined as
 
 \begin{equation}
-\label{eq:radEq}
+\label{eq:effi}
 	\centering
 	\rho_a = \frac{A_{eff}}{A}
 \end{equation}
@@ -79,7 +82,52 @@ with $A$ being the total antenna area.
 
 %%%%%%%%%%%%%%%%% TASK 3 %%%
 \section{Cross section calculation}
+To calculate the minimum cross section that is detectable for the given values
 
+\begin{center}
+\begin{tabular}{c c}
+	Object Location & $R$ = 100km \\
+	Wavelength & $\lambda$ = 6m \\
+	Transmit Power & $P_t$ = 10 kW \\
+	Antenna Gain & $G$ = 20 dB \\
+	System Noise Temperature & $T_s$ = $10^3$ K \\
+	Bandwith & $B_w$ = 1 MHz
+\end{tabular}
+\end{center}
+
+the Signal-to-Noise ratio (SNR) is used. The SNR is the ratio between the received power versus the total system noise Power, where the System Noise Power is, according to \todo{richards zitieren}, denoted as
+
+\begin{equation}
+\label{eq:noise}
+	\centering
+	P_n = N_0 = k_B T_s B_w \qquad [W]
+\end{equation}
+
+Using equations \ref{eq:rePow} and \ref{eq:noise}, the SNR can be written as
+
+\begin{equation}
+\label{eq:snr}
+	\centering
+	SNR = \frac{P_r}{P_n} = \frac{P_t G A_{eff} \sigma}{4 \pi R^2 k_B T_s B_w}
+\end{equation}
+
+Substituting $A_{eff}$ with eq. \ref{eq:Aeff} and re-ordering \ref{eq:snr} to the cross section area $\sigma$ leads to
+
+\begin{equation}
+\label{eq:snr}
+	\centering
+	\sigma = {SNR} \frac{(4 \pi)^3 R^4 k_B T_s B_w}{P_t G^2 \lambda^2}
+\end{equation}
+
+To calculate the smallest cross section area that is detectable at a range of 100km, one has to assume a minimum SNR, at which the minimum cross section is still detectable.
+This is done with the help of the given cross section value of 0.76 $m^2$ in the assignment sheet, leading to a minimum SNR $SNR_{min}$ of about 0.04 dB.
+Substituting $SNR_{min}$ for $SNR$ in eq. \ref{eq:snr} and inserting the values given in the beginning of this chapter, this leads to a minimum cross section of 
+
+\begin{equation}
+\label{eq:crossSecResult}
+	\centering
+	\sigma = 0.7610 \qquad [m^2]	
+\end{equation}
 
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
