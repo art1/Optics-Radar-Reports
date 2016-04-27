@@ -92,7 +92,7 @@ To calculate the minimum cross section that is detectable for the given values
 	Object Location & $R$ = 100km \\
 	Wavelength & $\lambda$ = 6m \\
 	Transmit Power & $P_t$ = 10 kW \\
-	Antenna Gain & $G$ = 20 dB \\
+	Antenna Gain & $G$ = 20 dB = 100 W\\
 	System Noise Temperature & $T_s$ = $10^3$ K \\
 	Bandwith & $B_w$ = 1 MHz
 \end{tabular}
@@ -126,7 +126,7 @@ To calculate the smallest cross section area that is detectable at a range of 10
 
 The minimum SNR, not taking into account LNA's or other instruments to increase the SNR, is obviously 1, since if the signal is stronger than the noise the signal is theoretically detectable.
 
-Inserting $SNR_{min} = 1$ for SNR this leads to a minimum cross section
+Inserting $SNR_{min} = 1$ for SNR in eq. \ref{eq:snr} this leads to a minimum cross section
 
 \begin{equation}
 \label{eq:crossSecResult}
@@ -141,11 +141,57 @@ This is the same result as is given in the assignment sheet.
 \section{MST radars}
 
 \subsection{SNR as function of universal time and altitude}
-In test 1, each pulse produces 100 datasets
+To plot the Signal to Noise ratio as a function of time and altitude, data from 28th of February 2006 is used. The plot can be seen in fig. \ref{img:snrPlot}, the MATLAB Code used to plot these heatmaps can be found in Appendix \ref{code:snr}.
 
+\begin{figure}
+	\centering
+	\label{img:snrPlot}
+	\includegraphics[width=\textwidth]{images/task4_plot1}
+	\caption{SNR as function of altitude and time, data from 28Feb06}
+\end{figure}
 
 
 \subsection{Pulse calculations}
+To calculate the pulse length, the inter-pulse period (IPP), pulse repetition frequency (PRF )and maximum unambiguous range 	$R_{max}$ for these height resolutions, the following formulas are used:
+
+\begin{center}
+\begin{equation}
+\centering
+\label{eq:pulselength}
+	\Delta R = \frac{c \tau_p }{2} \qquad [km] \qquad \textrm{, with } \Delta R \textrm{ as Range resolution and } \tau_p \textrm{ as pulse length}
+\end{equation}
+\begin{equation}
+	{IPP} = \frac{\tau_p }{D} \qquad [s] \qquad \textrm{, with D as duty cycle}
+\end{equation}
+\begin{equation}
+	PRF = \frac{1}{IPP} \qquad [Hz]
+\end{equation}
+\begin{equation}
+\label{eq:rangeMax}
+	R_{max} = \frac{c \,  {IPP} }{2} \qquad [km]
+\end{equation}
+\end{center}
+
+Using these equations the appropriate values for each height resolution is calculated. For the Duty Cycle a value of 5\% is assumed.
+
+\begin{center}
+\begin{table}
+	\caption{Calculated values using eq. (\ref{eq:pulselength}) to(\ref{eq:rangeMax})}
+\begin{center}
+\begin{tabular}{ |c | c | c|}
+	\hline
+	\textbf{Range resolution} & \textbf{150m} & \textbf{1200m} \\
+	\hline
+	\textbf{Pulse Length} & 1 $\mu s$ & 8 $\mu s$ \\
+	\textbf{IPP} & 20 $\mu s$  & 160 $\mu s$ \\
+	\textbf{PRF} & 50 kHz & 6250 Hz\\
+	\textbf{ R$_{max}$} & 3 km & 24 km\\
+	\hline	
+\end{tabular}
+\end{center}
+\end{table}
+\end{center}
+
 
 \subsection{Transmitted pulse length and received signal strength}
 
