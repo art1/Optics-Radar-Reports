@@ -83,6 +83,49 @@ where $\rho_{a} $ is the antenna efficiency, defined as
 
 with $A$ being the total antenna area.
 
+This derivation was done keeping in mind that only one target, a so-called hard target is being observed. In case of a distributed, or soft target the equation \ref{eq:radEq} is further enhanced.
+
+To generalize the equation \ref{eq:radEq} for more than one target over a volume, one can use the integral relation of cross sectino areas in a Volume (\ref{eq:crossVol}).
+
+\begin{equation}
+	\label{eq:crossVol}
+	\centering
+	\int \sigma(\vec{x}) dV_s \equiv \sigma
+\end{equation}
+
+Inserting this into Eq. \ref{eq:radEq} leads to a generalized version Equation.
+
+\begin{equation}
+\label{eq:radEqGen}
+	\centering
+	P_{r} = \int P_t \frac{\rho_a^2 A^2 }{4 \pi \lambda^2 R^2} \sigma(\vec{x}) dV_s \qquad [W]
+\end{equation}
+
+
+\begin{figure}
+	\centering
+	\label{fig:softTarget}
+	\includegraphics[width=0.8\textwidth]{images/softTarget}
+	\caption{Soft Target (image source: lecture by Philip Erickson \citep{erickson:lecture})}
+\end{figure}
+
+Assuming an isotropic scatter distribution for the volume (c.f. \ref{fig:softTarget}), one can solve the integral to:
+
+\begin{equation}
+	\label{eq:crossVol}
+	\centering
+	\int \sigma(\vec{x}) dV_s = \frac{ c \tau}{2} R^2 \sigma
+\end{equation}
+
+Combining (\ref{eq:crossVol}) and the generalized radar equation (\ref{eq:radEqGen}) leads to the radar equation for a soft target:
+
+\begin{equation}
+\label{eq:radEqSoft}
+	\centering
+	P_{r} = P_t \frac{c \rho_a^2 A^2 \tau}{8 \pi \lambda^2 R^2} \sigma \qquad [W]
+\end{equation}
+
+
 %%%%%%%%%%%%%%%%% TASK 3 %%%
 \section{Cross section calculation}
 To calculate the minimum cross section that is detectable for the given values
@@ -161,9 +204,11 @@ To calculate the pulse length, the inter-pulse period (IPP), pulse repetition fr
 	\Delta R = \frac{c \tau_p }{2} \qquad [km] \qquad \textrm{, with } \Delta R \textrm{ as Range resolution and } \tau_p \textrm{ as pulse length}
 \end{equation}
 \begin{equation}
+\label{eq:ipp}
 	{IPP} = \frac{\tau_p }{D} \qquad [s] \qquad \textrm{, with D as duty cycle}
 \end{equation}
 \begin{equation}
+\label{eq:prf}
 	PRF = \frac{1}{IPP} \qquad [Hz]
 \end{equation}
 \begin{equation}
@@ -176,7 +221,8 @@ Using these equations the appropriate values for each height resolution is calcu
 
 \begin{center}
 \begin{table}
-	\caption{Calculated values using eq. (\ref{eq:pulselength}) to(\ref{eq:rangeMax})}
+\label{tab:range}
+	\caption{Calculated values using eq. (\ref{eq:pulselength}) to (\ref{eq:rangeMax})}
 \begin{center}
 \begin{tabular}{ |c | c | c|}
 	\hline
@@ -195,4 +241,42 @@ Using these equations the appropriate values for each height resolution is calcu
 
 \subsection{Transmitted pulse length and received signal strength}
 
+Using equations \ref{eq:ipp} and \ref{eq:prf} as well as the relation of Peak to average power (\ref{eq:avg}) one can combine those and get the transmitted Power in relation of to the transmitted pulse length $\tau_p$ (c.f. eq. \ref{eq:transmittedPower}).
+
+\begin{equation}
+	\centering
+	\label{eq:avg}
+	P_{avg} = P_t D = (\tau_p \textrm{PRF} )
+\end{equation}
+
+\begin{equation}
+	\centering
+	\label{eq:transmittedPower}
+	P_{t} = \frac{P_{avg} T_d}{\tau_p n_p} 
+\end{equation}
+
+With $n_p$ being the number of pulses, in this case one, and the dwell-time 
+\begin{equation}
+	\label{eq:dwell}
+	\centering
+	T_d = \frac{n_p}{\textrm{PRF}}
+\end{equation}
+
+the transmitted power $P_t$ can be substituted in eq. \ref{eq:radEq}, which leads to the total received power related to the transmitted pulse length (\citep[c.f.][chap. 2.10]{richards2010principles}):
+
+
+\begin{equation}
+	\label{eq:relation}
+	\centering
+	P_r = \frac{P_{avg} T_d \rho^2 A^2 \sigma }{\tau_p 4 \pi \lambda^2 R^2} \qquad	[W]
+\end{equation}
+
 \subsection{Atmospheric parameters}
+
+The radar observes the atmosphere up to a height of about 17 km, thus the radar is observing the troposphere (0 to 12km) and lower parts of the stratosphere (12 to 50km).
+
+One can observe that up to height of about 3km the SNR is quite high, presumably this is the case of the dense atmosphere near ground, for example clouds or fog. Between 3 and 6 the SNR gets lower, with then having a region with higher SNR up to about 11km.
+
+It seems that the wind is causing this increase in SNR, since plotting the wind data provided in addition to the SNR and altitude data (when available) reveals that the wind in these attitude is quite strong, with absolute wind speeds up to 10 m/s
+
+

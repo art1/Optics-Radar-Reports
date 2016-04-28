@@ -22,14 +22,13 @@ while n < 3
     end
     
     subplot(1,2,n);
-    pcolor(parsedData{1,n})
+    pcolor(data{n}(1:(intervall(n)):(cellfun('length',data(1,n))),1),data{n}(1:intervall(n),2),parsedData{1,n})
     colormap jet;
     shading flat;
     grid on;
     xlabel('Universal time (hours)');
     xlabel(colorbar,'SNR (dB)');
     ylabel('Altitude (km)');
-    set(gca,'XTickLabel',[data{n}(1),data{n}(cellfun('length',data(1,n)))]);
-       
+    
     n = n+1;
 end
