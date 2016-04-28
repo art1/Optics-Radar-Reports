@@ -16,3 +16,6 @@ Introduction in CCDs. Description of the ALIS System. Discussion of its scientif
 
 submitted April 19th 2016, 
 final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem2/Optics_Assignment_Arthur-Scharf-final.pdf)
+
+### Problem 2 - General Radar Theory
+Scientific radar and radar frequencies. Derivation of Radar Equation, cross-section calculations and MST Radar Application
