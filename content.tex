@@ -10,14 +10,36 @@ The operational frequency for a scientific radar is highly depending on the appl
 
 
 \subsection{Frequency ranges}
-According to \todo{add reference ti that oslo presentation} ISR uses frequencies between 50MHz and 2 GHz
+Radar stands for \textit{\textbf{Radio Detection and Ranging}}, so Radar generally operates in the RF band, going from about 3MHz to 300GHz \citep{richards2010principles}. Therefore, any of the Radar techniques explained above can be operated in any of those ranges. However, some specific frequency ranges may have advantages and disadvantages for the particular radar technique applied, which is why sometimes ISR, CSR and Doppler Radar Applications are categorized in different bands. Unfortunately, different literature and papers state different ranges. For example the University of Oslo states, ISR ranges from between 50MHz up to 2 GHz, \citep{oslo:lecture}, whereas Tromso for example uses UHF and VHF radar with frequencies between 224 and 933 MHz. For CSR usually a range between 3 and 300MHz is used.
 
-3-300mhz csr
+Doppler radar though can be used in almost every RF range, also called bands (c.f. \ref{tab:bands}).
 
-Radar stands for \textit{\textbf{Radio Detection and Ranging}}, so Radar generally operates in the RF band, going from about 3MHz to 300GHz \citep{richards2010principles}. Therefore, any of the Radar techniques explained above can be operated in any of those ranges. However, some specific frequency ranges may have advantages and disadvantages for the particular radar technique applied, which is why sometimes ISR, CSR and Doppler Radar Applications are categorized in different bands. Unfortunately, different literature and papers state different ranges, so for example
+\begin{table}[h!]
+\centering
+\caption{Different frequency bands used in radar}
+\label{tab:bands}
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{Band name} & \textbf{Frequency} & \textbf{Usage}                    \\ \hline
+HF                 & 3-30 MHz           & Coastal radar systems             \\ \hline
+L                  & 1-2 GHz            & Long range air traffic control    \\ \hline
+S                  & 2-4 GHz            & weather, marine radar             \\ \hline
+C                  & 4-8 GHz            & satellite transponders, weather   \\ \hline
+X                  & 8-12 GHz           & weather, mapping, military        \\ \hline
+K                  & 18-24 GHz          & limited usage (water vapour)      \\ \hline
+V                  & 40-75 GHz          & limited (oxygen absorption)       \\ \hline
+W                  & 75-110 GHz         & high-res mapping and observations \\ \hline
+\end{tabular}
+\end{table}
 
 
 \subsection{Information gathered by radar measurement}
+
+The incoherent scatter radar is mostly used for ionospheric research and observations. The ISR radar beam scatters off of electrons in the ionospheric plasma, which then can be captured by an appropriate radar. The fluctuation in electron density provides information about the ion temperature, mass distribution as well as ion composition and plasma velocity (using Doppler radar, in this case) \citep{gordon1958incoherent}.
+
+The working principle Coherent Scatter Radar is similar to the ISR, it also relies on backscattering off of plasma waves and thus can observe them. Combining multiple radars allows to track plasma flows on a very large scale. But since no direct plasma parameters are measured (as in case of ISR), one must be cautious in interpreting data. 
+
+Doppler radar is different in its working principle. Doppler relies on the fact that an electromagnetic wave needs some time to propagate to its destination. Since the propagation speed of the wave is known, one can determine the distance of where the EM wave was reflected with the help of very precise measurement of the reflected wave. Also, the velocity of the observed target can be determined.
 
 
 
