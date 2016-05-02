@@ -19,4 +19,6 @@ final version can be found [here](https://github.com/art1/Optics-Radar-Reports/b
 
 ### Problem 2 - General Radar Theory
 Scientific radar and radar frequencies. Derivation of Radar Equation, cross-section calculations and MST Radar Application
-working copy is [here](https://github.com/art1/Optics-Radar-Reports/blob/problem2_radar/report.pdf)
+
+submitted May, 2nd 2016,
+final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem2_radar/Problem-2_Arthur-Scharf_General-Radar-Theory.pdf)
