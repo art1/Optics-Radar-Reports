@@ -31,4 +31,4 @@ while n < 3
     ylabel('Altitude (km)');
     
     n = n+1;
-end
+    end1p
