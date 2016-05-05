@@ -8,6 +8,7 @@ In this Assignment, \textit{\textbf{Problem 3 - Propagation Effects \& Targets}}
 \section{Radar Performance}
 
 \subsection{Phenomena affecting radar performance}
+\label{chap:diffraction}
 The performance of a radar is affected by couple of different phenomena, which degrade or attenuate the sent and received signal.
 \begin{enumerate}
 	\item \textbf{Atmospheric attenuation} \newline
@@ -46,14 +47,30 @@ Radar is seldom used at 22GHz or 60GHz since at these frequencies the atmosphere
 \section{Radar cross section (RCS)}
 
 \subsection{Behaviour of normalized RCS}
+Figure \ref{fig:RCS} shows the normalized Radar Cross Section of a sphere as function of its circumference in wavelength. The relative RCS is increasing, until the wavelength $\lambda$ equals the circumference, then starts to oscillate until the wavelength is about $\frac{1}{10}$ of the circumference, where the RCS is equal to the normalized RCS, and frequency independent. The first region, the increasing relative RCS, is also called the Rayleigh region, and the latter one the Optical region.\\
+The highly fluctuating and oscillation region (Mie) occurs due to interferences of the front face specular return and due to the surface creeping waves, that propagate around the back of the sphere (c.f. chap. \ref{chap:diffraction}) \citep{richards2010principles}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/nRCS}
+	\caption{Scattering in different regions	 (\citep[c.f.][Fig. 6-12]{richards2010principles})}
+	\label{fig:RCS}
+\end{figure}
 
 \subsection{Low specular RCS}
+A low specular RCS means, that the target is hardly visible to a radar that is illuminating the target. According to Richards et al. \citep{richards2010principles}, one must take into account up to three differenct mechanisms:
+\begin{itemize}
+	\item Minimize the physical cross section of the target, to minimize the EM wave energy intercepted
+	\item Use of \textit{Radar Absorbing Materials} (RAM) to absorb as much of the EM wave as possible, to reduce the amount of reflected energy towards the radar receiver.
+	\item Design the shape and surface such as the least amount of energy reflected is reflected towards the radar receiver
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%% TASK 3 %%%
 \section{Radar parameters affecting performance}
 
 \subsection{Surface clutter}
+
 
 \begin{itemize}
 	\item \textbf{Pulse width}\newline
@@ -62,14 +79,21 @@ Radar is seldom used at 22GHz or 60GHz since at these frequencies the atmosphere
 	\item \textbf{Transmitter power}\newline
 	\item \textbf{Number of pulses returned from target}\newline
 	\item \textbf{System losses}\newline
-	\item \textbf{Sensitivity of max detection range}
+	\item \textbf{Sensitivity of max detection range to changes in RCS}
 \end{itemize}
 
 
 \subsection{Receiver noise}
 
-
-(1) pulse width, (b) antenna gain, (c) transmitter power, (d) number of pulses returned from the target, (e) system losses, and (f) sensitivity of the maximum detection range to changes in the radar cross section.
+\begin{itemize}
+	\item \textbf{Pulse width}\newline
+		
+	\item \textbf{Antenna gain} \newline
+	\item \textbf{Transmitter power}\newline
+	\item \textbf{Number of pulses returned from target}\newline
+	\item \textbf{System losses}\newline
+	\item \textbf{Sensitivity of max detection range to changes in RCS}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
 \section{Atmospheric studies with MF \& HF radars}
@@ -95,7 +119,7 @@ The optimal Pulse Repetition Frequency is depending on the total reflection heig
 
 \subsection{Main Principle of spaced antenna techniques}
 Spaced Antenna (SA) techniques are usually used for investigating and observing ionospheric dynamics and to measure the "apparent motion of ground diffraction pattern across the observing region" \citep{reid2015mf}.\\
-In a default operational configuration the transmitting antenna is located close to minimum three non-collinear receiving antennas to receive partial reflections from the D-region. The antennas usually work in a bi-static mode, which means there are separate antennas for transmitting and receiving. But it is also common that the same antennas are used for both transmitting and receiving, e.g. as illustrated in fig. \ref{fig:SAconfing}, where in this particular case each antenna has its own receiver \citep{reid2015mf}.
+In a default operational configuration the transmitting antenna is located close to minimum three non-collinear receiving antennas to receive partial reflections from the D-region. The antennas usually work in a bi-static mode, which means there are separate antennas for transmitting and receiving. But it is also common that the same antennas are used for both transmitting and receiving, e.g. as illustrated in fig. \ref{fig:SAconfing}, where in this particular case each antenna has its own receiver.
 
 \begin{figure}
 	\centering
@@ -104,7 +128,7 @@ In a default operational configuration the transmitting antenna is located close
 	\label{fig:SAconfing}
 \end{figure}
 
-To analyse the received signals at the three receiver antennas usually a simple correlation analysis is exerted to determine the diffraction pattern motion of the partial reflections from the D-region. In the typical case one uses coherent receivers and only the amplitude information for the analysis \citep{reid2015mf}.
+To analyse the received signals at the three receiver antennas usually a simple correlation analysis is exerted to determine the diffraction pattern motion of the partial reflections from the D-region. In the typical case one uses coherent receivers and only the amplitude information for the analysis.
 
 One of the advantages of this particular technique is the wide angular polar diagram one obtains when the backscatter angle is wide, thus resulting in a wide effective beam.\\
 Still, this technique has some disadvantages, as for example a large area is required to place the antennas. And also the antennas need a large dynamic range for the returned echo power, which is a problem for especially older systems, since those may not have sufficient digitization capabilities \citep{reid2015mf}.
