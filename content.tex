@@ -70,16 +70,23 @@ A low specular RCS means, that the target is hardly visible to a radar that is i
 \section{Radar parameters affecting performance}
 
 \subsection{Surface clutter}
+\label{sec:surfaceClutter}
 
 
 \begin{itemize}
 	\item \textbf{Pulse width}\newline
-		
+		If the returned signal is covered or limited by surface clutter, one could increase the pulse width to increase the energy that is sent out, thus increasing the energy reflected by the target and therefore increasing the SNR at the receiver \citep{richards2010principles}.
+		In contrary, shortening the pulse worsens the SNR at the receiver but improves the unambiguous range.		
 	\item \textbf{Antenna gain} \newline
+		Increasing or Decreasing the antenna gain increases, respectively decreases the received power, but since the surface clutter is included in the received signal, the surface clutter is also affected by the antenna gain, thus decreasing or increasing the antenna gain does not affect the SNR at all.
 	\item \textbf{Transmitter power}\newline
+		Varying this parameter results in a similar outcome as varying the antenna gain. Since the transmitted power is affecting the power reflected by the surface clutter, the signal-to-noise ratio can not be improved, thus the signal will still be limited by surface clutter.
 	\item \textbf{Number of pulses returned from target}\newline
+		In this case, one has to take into account the ambiguity that can occur, when pulses overlap, respectively the signal returns are coming from surface clutter and from the target itself. According to Richards et al. \citep{richards2010principles}, the SNR can be improved by using multiple pulses and coherently integrating them (doppler processing).
 	\item \textbf{System losses}\newline
+		Since system losses are coupled to the receiver and transmitter itself, reducing the amount of system losses does not necessarily improve the signal-to-noise ratio, since the clutter will still be illuminated and still will reflect a portion of power.
 	\item \textbf{Sensitivity of max detection range to changes in RCS}
+		
 \end{itemize}
 
 
@@ -87,11 +94,20 @@ A low specular RCS means, that the target is hardly visible to a radar that is i
 
 \begin{itemize}
 	\item \textbf{Pulse width}\newline
-		
+		If the receiver noise is responsible for burying the signal in noise, one could also increase the pulse width, to get more reflected power back from the target, similar to the surface clutter case in \ref{sec:surfaceClutter}.
 	\item \textbf{Antenna gain} \newline
+				Increasing the antenna gain improves the signal-to-noise ratio, as one can easily see from the SNR-equation \ref{eq:snr}, since the received signal can now be amplified.
+		\begin{equation}
+			\label{eq:snr}
+			\centering
+			SNR = \frac{P_r}{P_n} = \frac{P_t G A_{eff} \sigma}{4 \pi R^2 k_B T_s B_w}
+		\end{equation}
 	\item \textbf{Transmitter power}\newline
+		Increasing the transmitter power, and thus the power reflected by the target, will improve the SNR, since the received power will also be higher, but the receiver noise (under certain circumstances) will remain the same, c.f. eq. \ref{eq:snr}.
 	\item \textbf{Number of pulses returned from target}\newline
+		This case is similar to the one in section \ref{sec:surfaceClutter}. The number of pulses is limited by the maximum unambiguous range, but again, integrating multiple pulses coherently, improves the overall SNR \citep{richards2010principles}.
 	\item \textbf{System losses}\newline
+		Decreasing system losses, thus also decreasing the losses in the receiver improves the SNR, because the total losses are decreased which leads to a decrease of the denominator of the radar equation (\citep[c.f.][Eq. 2.17]{richards2010principles}), while the denominator effectively stays the same.
 	\item \textbf{Sensitivity of max detection range to changes in RCS}
 \end{itemize}
 
