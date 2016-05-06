@@ -86,7 +86,7 @@ A low specular RCS means, that the target is hardly visible to a radar that is i
 	\item \textbf{System losses}\newline
 		Since system losses are coupled to the receiver and transmitter itself, reducing the amount of system losses does not necessarily improve the signal-to-noise ratio, since the clutter will still be illuminated and still will reflect a portion of power.
 	\item \textbf{Sensitivity of max detection range to changes in RCS}
-		
+		Again, looking at Equation \ref{eq:snr} one can easily see that the higher the range, the lower the signal-to-noise ratio when the radar cross section stays the same. This means, one has to increase the sensitivity of the whole system to be able to detect the same cross section at higher range, or "increase" the cross section.
 \end{itemize}
 
 
@@ -109,6 +109,7 @@ A low specular RCS means, that the target is hardly visible to a radar that is i
 	\item \textbf{System losses}\newline
 		Decreasing system losses, thus also decreasing the losses in the receiver improves the SNR, because the total losses are decreased which leads to a decrease of the denominator of the radar equation (\citep[c.f.][Eq. 2.17]{richards2010principles}), while the denominator effectively stays the same.
 	\item \textbf{Sensitivity of max detection range to changes in RCS}
+		Since the receiver noise is always present, and independent of the range, the SNR gets worse when the range is increased at a given RCS. Thus, changing the RCS leads to changes in the sensitivity of the maximum detection range \citep{richards2010principles}.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
