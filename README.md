@@ -25,3 +25,6 @@ final version can be found [here](https://github.com/art1/Optics-Radar-Reports/b
 
 ### Problem 3 - Propagation Effects & Targets
 Radar parameters and its effects on performance. Radar Cross Sections. HF & MF Atmospheric studies
+
+submitted May, 6th 2016,
+final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem3/Problem3_Propagation-Effects-and-Targets_Arthur-Scharf.pdf)
