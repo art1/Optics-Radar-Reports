@@ -5,7 +5,8 @@ In this Assignment, \textit{\textbf{Problem 4 - Pulse modulation techniques and 
 
 
 %%%%%%%%%%%%%%%%% TASK 1 %%%
-\section{Studying pulse coding techniques}
+\section{Pulse coding techniques}
+bla
 
 \subsection{Normalized ambiguity diagram}
 
@@ -34,7 +35,19 @@ In this Assignment, \textit{\textbf{Problem 4 - Pulse modulation techniques and 
 \section{Reduction of effective height resolution}
 
 \subsection{Signal-to-noise ratio as function of time}
+Using the provided datasets, captured on 28th February 2006, the Signal-to-Noise ratio is plotted against altitude and local time. The associated MATLAB-Code can be found in Appendix \ref{apx:matlab}. The Code used is similar to the one used in \textit{Problem 2 - General Radar Theory} to plot SNR against altitude and time.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/task2_snr_plot}
+	\caption{SNR against altitude and time for each dataset}
+	\label{fig:snr}
+\end{figure}
+
+Each dataset for the three tests contains radar data with different coding techniques; test 3 has Barker coding, test 4 complementary coding and test 5 has uncoded data. \newline
+
+
 
 \subsection{Scientific usability of obtained data plots}
-
+As one can easily see in Fig. \ref{fig:snr}, test 4, the complementary coding has the highest SNR compared to the other two tests. Thus it seems that this dataset can give the most detailed view of the atmosphere, concerning
 \subsection{Dynamical state of the atmosphere}
