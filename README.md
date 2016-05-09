@@ -28,3 +28,6 @@ Radar parameters and its effects on performance. Radar Cross Sections. HF & MF A
 
 submitted May, 6th 2016,
 final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem3/Problem3_Propagation-Effects-and-Targets_Arthur-Scharf.pdf)
+
+## Problem 4 - Pulse Coding Techniques and Observations of the Atmosphere
+working copy [here](https://github.com/art1/Optics-Radar-Reports/blob/problem4/report.pdf)
