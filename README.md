@@ -32,4 +32,4 @@ final version can be found [here](https://github.com/art1/Optics-Radar-Reports/b
 ### [Problem 4](https://github.com/art1/Optics-Radar-Reports/blob/problem4/appendix/Problems%20Part%204%202016.pdf) - Pulse Coding Techniques and Observations of the Atmosphere
 working copy [here](https://github.com/art1/Optics-Radar-Reports/blob/problem4/report.pdf)
 
-### [Problem 5](https://github.com/art1/Optics-Radar-Reports/blob/problem5/appendix/Problems%20Part%205%202016.pdf) Phased Array Optimization and Configuration
+### [Problem 5](https://github.com/art1/Optics-Radar-Reports/blob/problem5/appendix/Problems%20Part%205%202016.pdf) - Phased Array Optimization and Configuration
