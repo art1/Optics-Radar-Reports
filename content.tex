@@ -206,7 +206,8 @@ Figures \ref{fig:PRN_props} to \ref{fig:pulse10s_top} show plots of the PRN puls
     \caption{PRN Ambiguity Top}
 %    \label{fig:7barker_3D}
   \end{minipage}
-  \vfill
+\end{figure}
+\begin{figure}
     \begin{minipage}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{images/long_props}
     \caption{10s pulse properties}
@@ -248,7 +249,7 @@ Again, comparing only the pulse width of 10s, one can see that the LFM coded pul
 \subsection{Signal-to-noise ratio as function of time}
 Using the provided datasets, captured on 28th February 2006, the Signal-to-Noise ratio is plotted against altitude and local time. The associated MATLAB-Code can be found in Appendix \ref{apx:matlab}. The Code used is similar to the one used in \textit{Problem 2 - General Radar Theory} to plot SNR against altitude and time.
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{images/task2_snr_plot}
 	\caption{SNR against altitude and time for each dataset}
@@ -260,9 +261,17 @@ Each dataset for the three tests contains radar data with different coding techn
 
 
 \subsection{Scientific usability of obtained data plots}
-As one can easily see in Fig. \ref{fig:snr}, test 4, the complementary coding has the highest SNR compared to the other two tests. Thus it seems that this dataset can give the most detailed view of the atmosphere, concerning.
-Although one could argue, that the SNR is almost too high, since the region between 5 and 10 km is almost. \todo{what to write here?}
+As one can easily see in Fig. \ref{fig:snr}, test 4, the complementary coding has the highest mean SNR compared to the other two tests (the colorbar was calculated taking into account all given data, to provide a comparable representation of heatmap colors). Thus it seems that this dataset can give the most detailed view of the atmosphere. This can seen best in the upper part of the atmosphere, where the complementary coding test gives structure in the atmosphere at around 13km, whereas this region has a very low SNR when using Barker code. Using uncoded pulses this region is not even faintly visible.
+
 \subsection{Dynamical state of the atmosphere}
+Comparing the test 4 data from Fig. \ref{fig:snr} and the wind data in Fig. \ref{fig:windPlot}, one can see that the high SNR corresponds with relatively high wind speeds in the particular region, whereas the zonal wind is a bit weaker than the meridional wind. The observed vertical wind speeds are very high compared to the zonal and meridional winds, and are directed downward \\
+An interesting feature of these wind speeds is the little break at around 11km altitude, where either no data is available. But surprisingly this corresponds very well to the observed low SNR. This might be, that this particular region is very quiet concerning wind speeds.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/task2_wind_plot}
+	\caption{Wind data for Test 4; (1) zonal, (2) meridional, (3) vertical}
+	\label{fig:windPlot}
+\end{figure}
 
 
 
