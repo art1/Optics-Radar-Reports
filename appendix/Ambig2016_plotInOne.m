@@ -233,23 +233,22 @@ rxx=a(1,:);
 %% Plots
 
 
-figure, clf, hold off
-h(1) = subplot(3,3,1);
-h(2) = subplot(3,3,4);
-h(3) = subplot(3,3,7);
-plot(h(1),tscalel,[0 abs(uamp) 0],'linewidth',1.5)
+figure(1), clf, hold off
+subplot(3,1,1)
+plot(tscalel,[0 abs(uamp) 0],'linewidth',1.5)
 ylabel(' Amplitude ' )
 axis([-inf inf 0 1.2*max(abs(uamp))])
-plot(h(2),t, phas,'linewidth',1.5)
+subplot(3,1,2)
+plot(t, phas,'linewidth',1.5)
 axis([-inf inf -inf inf])
 ylabel(' Phase [rad] ' )
-
+subplot(3,1 ,3)
 title('Magnitude of autocorrelation function')
 % define new delay and Doppler vectors
 delay=[-fliplr(tau) tau];
 freq=f(K+2:2*K+2)*ceil(max(t));
 
-plot(h(3),delay,a(1,:))
+plot(delay,a(1,:))
 
 % figure 
 % contour(delay,freq,a)
@@ -258,15 +257,14 @@ plot(h(3),delay,a(1,:))
 % ylabel(' {\it f_d} x {\itMt_b}');
 % axis equal tight
 
-% figure
-h(4) = subplot(1,3,2);
-mesh(h(4),delay,freq,a) 
+figure
+mesh(delay,freq,a) 
 xlabel(' {\it\tau}/{\itt_b}');
 ylabel(' {\it f_d} x {\itMt_b}');
 zlabel( ' | {\it\chi} ({\it\tau}, {\it f_d}) | ' ) ;
 
-h(5) = subplot(1,3,3);
-imagesc(h(5),delay,freq,a)
+figure
+imagesc(delay,freq,a)
 title('Plot of | {\it\chi} ({\it\tau}, {\it f_d}) | from above')
 xlabel(' {\it\tau}/{\itt_b}');
 ylabel(' {\itf_d} x {\itMt_b}');
