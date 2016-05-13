@@ -1,7 +1,7 @@
 
 %%%%%%%%%%%%%%%%% Introduction to the Assignment %%%
 
-In this Assignment, \textit{\textbf{Problem 4 - Pulse modulation techniques and observations of the atmosphere}}, ...
+In this Assignment, \textit{\textbf{Problem 4 - Pulse modulation techniques and observations of the atmosphere}}, different pulse coding techniques as Barker, Complementary, LFM and PRN coding, are assessed and compared to each other and to non-coded radar pulsed. In the second part of this assignment real atmospheric radar data using different coding techniques is studied.
 
 
 %%%%%%%%%%%%%%%%% TASK 1 %%%
@@ -17,13 +17,12 @@ By studying the auto correlation and ambiguity functions, one can compare differ
 \end{figure}
 In the given assignment program the plotted diagram (e.g. \ref{fig:ambdiag1}) is normalized on all three axes.
 The axes are the ambiguity function in z-direction, Doppler in x-direction and Delay in y-direction. In the plot of Fig. \ref{fig:ambdiag1}, the negative Doppler positive delay part was shifted to positive Doppler negative delay, which is why the x-axis has no negative numbers. This can be done because of the symmetry of the ambiguity function.\\
-The doppler and delay are normalized to the number of sample. \todo{check that! check also wikipedia on normalised frequency}
+The doppler frequency is normalized to the Bandwidth, and the delay time to the pulse width \citep{richards2010principles}.
 
-If the axes would not be normalized, the x- and y-axis would be labelled with $f_d$ and $\tau$, respectively, with units of Hertz and seconds. Since the ambiguity function is normalized w.r.t. the delay and doppler frequency, the z-axis will not change. \todo{really? see Matlabbook chap 4 eq. 4.10. Is z-axis normalized to amplitude?}
+If the axes would not be normalized, the x- and y-axis would be labelled with $f_d$ and $\tau$, respectively, with units of Hertz and seconds. Since the ambiguity function is normalized w.r.t. the delay and doppler frequency, the z-axis will 
 
 \subsection{Amplitude normalized auto-correlation function}
-According to \todo{add matlabbook reference} the auto-correlation function can be obtained by $\chi(\tau,0)$. \todo{think that's not true, because thats 1- tau over t, where's the amplitude in here?}
-\todo{also, might check richards chapter 20, pdf page 838}
+The auto-correlation function is a function with the doppler frequency and delay or lag time as function, thus it is a 2D, respectively a 3D function. This function shows up as the amplitude (in z-axis) in fig. \ref{fig:ambdiag1}. Since the auto-correlation function is normalized to it's peak value, this 3D-representation is the amplitude normalized auto-correlation function.
 
 
 \subsection{Radar system properties}
@@ -49,8 +48,7 @@ According to \todo{add matlabbook reference} the auto-correlation function can b
 			According to Richards et al.\citep{richards2010principles} Doppler tolerance describes the response of the waveform in the presence of an uncompensated Doppler. This means, doppler tolerance defines a maximum for Doppler shift so that the matched filter can provide a high enough correlation peak compared to the noise.
 	\item \textbf{Ambiguities} \\
 			A range ambiguity can occur, when the interpulse period (IPP) is shorter than the round-trip travel time to the target. This would show up as a closer target in the next pulse period, where one could not distinguish anymore if it's a close or distant target.\\
-			Frequency ambiguities \todo{doppler frequency? depending on the sampling?}
-			
+			Frequency ambiguities can occur, if the pulse is too short, thus making the read out frequency not properly distinguishable.			
 \end{enumerate}
 
 \subsection{Detectability}
