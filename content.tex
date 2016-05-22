@@ -76,7 +76,7 @@ If we now shift the position of the array, so that the center of the is located 
 
 %%%%%%%%%%%%%%%%% TASK 1 %%%
 \section{Optimal distance between array elements}
-Using the derived Array Factor equation in chap. \ref{chap:derivation}, the Array Pattern can be plotted using Matlab (). The Array Factor was normalized to the number of Array Elements, to be able to compare the results in an easier way.
+Using the derived Array Factor equation in chap. \ref{chap:derivation}, the Array Pattern can be plotted using Matlab (c.f. Appendix \ref{apdx:matlab}). The Array Factor was normalized to the number of Array Elements, to be able to compare the results in an easier way.
 
 \begin{figure}[h!]
 	\centering
@@ -108,7 +108,7 @@ Using again the Array Factor equation \ref{eq:AF}, the number of array Elements 
 
 %%%%%%%%%%%%%%%%% TASK 3 %%%
 \section{Spatial Weighting}
-To further suppress the side lobes, one can apply a technique called "spatial weighting". Here, the distance between the elements is increased, starting from the middle of the antenna.\todo{language}
+To further suppress the side lobes, one can apply a technique called "spatial weighting". Here, the distance between the elements is increased the further outside the Array Elements are.
 Since now the distance between the Array Elements are not uniform, and thus the phase shift in-between is neither, we can not use the simplified equation \ref{eq:AF}, derived in chapter \ref{chap:derivation}, but must use the initially given expression in \ref{eq:orig} \citep{roettger1989instrumental}.
 
 \begin{figure}[h!]
@@ -118,7 +118,7 @@ Since now the distance between the Array Elements are not uniform, and thus the 
 	\label{fig:triangWeight}
 \end{figure}
 
-Comparing fig. \ref{fig:triangWeight} with fig. \ref{fig:varyingElements} (64 Elements), we can see, that the sidelobes right next to the main lobe are heavily suppressed when a triangular weighting function is used, to increase the distance in the outer elements. However, this introduces an increase of sidelobe amplitudes in higher incidence angles, which might not be desired in all applications.
+Comparing fig. \ref{fig:triangWeight} with fig. \ref{fig:varyingElements} (64 Elements), we can see, that the sidelobes right next to the main lobe are suppressed when a triangular weighting function is used, to increase the distance in the outer elements. However, this introduces an increase of sidelobe amplitudes in higher incidence angles, which might not be desired in all applications. But still, the triangular weighting function is worse than the unweighted function, since almost all sidelobes have a higher amplitude.
 
 
 
@@ -128,7 +128,7 @@ Comparing fig. \ref{fig:triangWeight} with fig. \ref{fig:varyingElements} (64 El
 Taking into account the results of the previous chapters, we can conclude, that with the given antenna parameters, 64 lined up isotropic antennas, 53MHz operating frequency and a beam pointing in zenith angle, the optimal design parameters would be as follows:
 The optimal distance-to-wavelength-ratio would be 0.5, to push the sidelobes further outside.
 The number of of the lined up antennas 64, since it was given as an initial parameter.
-Also, the spatial weighting would not be done, since this introduces high sidelobes on the outer scanning angles and only suppresses the direct lobes next to the main lobe, only for a limited amount.
+Also, the spatial weighting would not be done, since this introduces high sidelobes on the outer scanning angles and only suppresses the direct lobes next to the main lobe for a limited amount.
 
 %%%%%%%%%%%%%%%%% TASK 5 %%%
 \section{Main lobe maximum and width}
