@@ -30,9 +30,13 @@ submitted May, 6th 2016,
 final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem3/Problem3_Propagation-Effects-and-Targets_Arthur-Scharf.pdf)
 
 ### [Problem 4](https://github.com/art1/Optics-Radar-Reports/blob/problem4/appendix/Problems%20Part%204%202016.pdf) - Pulse Coding Techniques and Observations of the Atmosphere
-Barker, Complementary, LFM and PRN Coding comparison. Observing effects on real radat data.
+Barker, Complementary, LFM and PRN Coding comparison. Observing effects on real radar data.
 
 submitted May, 13th 2016,
 final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem4/Problem4_Pulse-Coding-Techniques_Arthur-Scharf.pdf)
 
 ### [Problem 5](https://github.com/art1/Optics-Radar-Reports/blob/problem5/appendix/Problems%20Part%205%202016.pdf) - Phased Array Optimization and Configuration
+Phased Array Parameters, Spatial & Electrical Weighting, Beam Steering
+
+submitted May, 22nd 2016
+final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem5/Problem5_Phased-Array-Optimization_Arthur-Scharf.pdf)
