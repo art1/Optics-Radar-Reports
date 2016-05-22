@@ -111,6 +111,16 @@ Using again the Array Factor equation \ref{eq:AF}, the number of array Elements 
 To further suppress the side lobes, one can apply a technique called "spatial weighting". Here, the distance between the elements is increased, starting from the middle of the antenna.\todo{language}
 Since now the distance between the Array Elements are not uniform, and thus the phase shift in-between is neither, we can not use the simplified equation \ref{eq:AF}, derived in chapter \ref{chap:derivation}, but must use the initially given expression in \ref{eq:orig} \citep{roettger1989instrumental}.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{images/triangularSpatialWeight}
+	\caption{Spatial Weighting for Array Elements}
+	\label{fig:triangWeight}
+\end{figure}
+
+Comparing fig. \ref{fig:triangWeight} with fig. \ref{fig:varyingElements} (64 Elements), we can see, that the sidelobes right next to the main lobe are heavily suppressed when a triangular weighting function is used, to increase the distance in the outer elements. However, this introduces an increase of sidelobe amplitudes in higher incidence angles, which might not be desired in all applications.
+
+
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
 \section{Optimal Design for antenna array}

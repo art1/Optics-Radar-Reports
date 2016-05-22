@@ -12,7 +12,7 @@ f = 52e6;
 c = 299792458; % speed of light in m/s
 lambda = c/f; 
 
-% incidence angle in degrees, 0 is zenith
+% scanning angle in degrees, 0 is zenith
 delta = -90:.01:90;
 
 
@@ -57,8 +57,34 @@ end
 % Antenna Elements
 N = 64;
 % ideal spacing
-d = zeros(N);
-% Using an inverse triangular function to increase distance between the
+ideal_d = idealRatio * lambda;
+% Using inverse triangular function to increase distance between elements
 for i=(N/2):N
-    d)
+    m = 2/N;
+    weight = m * (i - N/2) + 1;
+    d(i) = weight * ideal_d;
+    d(N - i+1) = d(i);
 end
+
+% calculating complete radiation pattern, isotropic radiation
+E0 = 1;
+E = 0;
+phase_n = 0;    % zenith angle pointing
+for i=1:N
+    E = E + E0*exp(complex(0, (2*pi*d(i) * (i-1) * sind(delta)/lambda + phase_n)));
+end
+
+figure
+subplot(1,2,1)
+plot(delta,abs(E)/N);
+axis([-90 90 0 1])
+xlabel('incidence angle, 64 Elements, zenith pointing');
+ylabel('normalized radiation pattern');
+subplot(1,2,2)
+antennaNum = [1:1:64];
+plot(antennaNum,d);
+grid on;
+axis([0 N ideal_d max(d)])
+xlabel('Antenna Element Number');
+ylabel('distance to the next array Element [m]');
+
