@@ -45,7 +45,7 @@ Combining the different distances to the targets with the appropriate current fo
 %\begin{equation}
 \begin{eqnarray}
 	E_1(\delta) &=& I_0 \frac{e^{-jkr}}{4\pi r}\\
-        &\vdots& \\
+        &\vdots& \nonumber \\
 	E_N(\delta) &=& I_0 e^{j\varphi_{N}} \frac{e^{-jk[r - (N-1)d\sin\delta]}}{4\pi r}
 	\label{eq:fieldsOfArray}
 \end{eqnarray}
@@ -124,15 +124,70 @@ Comparing fig. \ref{fig:triangWeight} with fig. \ref{fig:varyingElements} (64 El
 
 %%%%%%%%%%%%%%%%% TASK 4 %%%
 \section{Optimal Design for antenna array}
-
+\label{chap:optimal}
+Taking into account the results of the previous chapters, we can conclude, that with the given antenna parameters, 64 lined up isotropic antennas, 53MHz operating frequency and a beam pointing in zenith angle, the optimal design parameters would be as follows:
+The optimal distance-to-wavelength-ratio would be 0.5, to push the sidelobes further outside.
+The number of of the lined up antennas 64, since it was given as an initial parameter.
+Also, the spatial weighting would not be done, since this introduces high sidelobes on the outer scanning angles and only suppresses the direct lobes next to the main lobe, only for a limited amount.
 
 %%%%%%%%%%%%%%%%% TASK 5 %%%
 \section{Main lobe maximum and width}
+The main lobe is located at an incidence angle $\delta = 0$. 
+The maximum of the main lobe can be calculated by applying the limit $$\lim_{x\to0} \frac{\sin(Nx)}{\sin(x)} = N $$ by using the Taylor-Expansion (c.f. Seminar 5).
+Also, we can easily see this by plugging in the main lobe angle of 0° in eq. \ref{eq:orig}, which simplifies to
+\begin{equation}
+	E(0) = \sum_{n=1}^N E_n(0)
+\end{equation}
+In our case, the maximum of the main lobe is 64 Power Units, since the exact maximum depends on the Array Element Pattern and its unit, which, in this case, was set to 1.
+According to Röttger et. al. \citep{roettger1989instrumental} main lobe width can be calculated using eq. \ref{eq:AF}
+\begin{equation}
+	\varphi_{B} = \arcsin(\frac{\lambda}{Nd})
+\end{equation}
+
+where $d$ is the distance between array elements and $N$ the number of array elements Array Elements. This gives us a main lobe width of $\varphi_{3dB} = 1.7908$°.
 
 
 %%%%%%%%%%%%%%%%% TASK 6 %%%
-\section{Radiation pattern change when non-vertical beam}
+\section{Radiation pattern change at non-vertical beam}
+To provide a different beam pointing than the vertical one, we must take into account the phase shifts between the array elements. The phase shifts between the origin and n-th element can be calculated as follows \citep{richards2010principles}:
+\begin{equation}
+	\varphi_n = \frac{2\pi n}{\lambda}d \sin(\delta)
+	\label{eq:pointing}
+\end{equation}
+
+Inserting eq. \ref{eq:pointing} in eq. \ref{eq:orig} gives us eq.\ref{eq:pointingSum} and plotting leads to fig. \ref{fig:pointing}.
+
+\begin{equation}
+	E(\delta) = \sum_{n=1}^N E_n(\delta) \exp \Bigg(-i\Big(\frac{2 \pi nd}{\lambda} (\sin(\delta) - \sin(\delta_s)) \Big)\Bigg)
+	\label{eq:pointingSum}
+\end{equation}
+with $\delta_s$ as the wanted beam direction angle.
+
+We can easily see, that steering the antenna in different directions moves the main lobe to the desired angle, while the beam width gets bigger the more the antenna is steered. According to Richards et. al.\citep{richards2010principles} the beam magnitude also gets lower in a real system, due to imperfections in the phase shifters. But in theory, as we can see in the mentioned figure, the main lobe magnitude stays the same.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{images/variablePointing}
+	\caption{different beam pointings}
+	\label{fig:pointing}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%% TASK 7 %%%
 \section{Electrical Weighting}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{images/triangularElectricalWeight}
+		\caption{Electrical Weighting with Triangular Function}
+	\label{fig:electricalWeight}
+\end{figure}
+
+Electrical Weighting is a technique to lower the amplitude of side-lobes by feeding the outer array elements with less power than the inner ones. This can be done by applying a weighting function to the Array Element Pattern.
+To visualize the impact of electrical weighting, fig. \ref{fig:electricalWeight} shows the Array Pattern after applying a simple triangular weighting function to the Array Element Pattern, by using the in chap. \ref{chap:optimal} mentioned optimal array parameters, such as a $\frac{d}{\lambda}$-ratio of 0.5, no spatial weighting, 64 Array Elements and a vertical beam (0° pointing).
+The appropriate MATLAB-Code can be found in Appendix \ref{apdx:matlab}.
+
+As one can see in the figure, the main lobe is heavily reduced when electrical weighting is applied, but also the side lobes are heavily attenuated with a factor greater than 2, which means that the sidelobes are more attenuated than the main lobe.
+
+Depending on the application, this electrical weighting technique could be very useful, if the power margin calculated such as half the power would still be enough for the appropriate targets.
+
+

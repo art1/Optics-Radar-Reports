@@ -74,9 +74,13 @@ for i=1:N
     E = E + E0*exp(complex(0, (2*pi*d(i) * (i-1) * sind(delta)/lambda + phase_n)));
 end
 
+
+% calculate ideal Array Pattern
+AF = (abs(sin(N * pi * idealRatio * sind(delta)) ./ sin(pi * idealRatio * sind(delta)))/N);
+    
 figure
 subplot(1,2,1)
-plot(delta,abs(E)/N);
+plot(delta,abs(E)/N,delta,AF);
 axis([-90 90 0 1])
 xlabel('incidence angle, 64 Elements, zenith pointing');
 ylabel('normalized radiation pattern');
@@ -86,5 +90,72 @@ plot(antennaNum,d);
 grid on;
 axis([0 N ideal_d max(d)])
 xlabel('Antenna Element Number');
-ylabel('distance to the next array Element [m]');
+ylabel('distance to the previous array Element [m]');
 
+%% Main Lobe Max & Width
+E=0;
+for i=1:N
+    E = E + E0*1
+end
+
+mainLobeWidth = asin(lambda/(N*ideal_d)) * 180/pi
+
+%% non-vertical beam
+phases = [-180 -45 0 30 45 75];
+N = 64;
+E = 0;
+E0 = 1;
+figure;
+for j=1:length(phases)
+    phase_n = phases(j);
+    for i=1:N
+        
+        E = E + E0*exp(complex(0, -(2*pi*(i)*ideal_d /lambda * (sind(delta)-sind(phase_n)))));
+    end
+    
+    subplot(2,3,j)
+    plot(delta,(20*log10(abs(E))))
+    xlabel(sprintf('incidence angle at %2.0f degree pointing',phases(j)));
+    ylabel('Array Pattern (dB)');
+    axis([-90 90 -1 inf]);
+    E = 0;
+end
+
+%% Electrical Weighting
+% Antenna Elements
+N = 64;
+% ideal spacing
+ideal_d = idealRatio * lambda;
+% Using triangular function to decrease power at outer elements
+E0 = 1;
+for i=1:N/2
+    m = 2/N;
+    weight = m * (i );
+    power(i) = weight * E0;
+    power((N+1)-i) = power(i);
+end
+
+% calculating complete radiation pattern, isotropic radiation
+E = 0;
+phase_n = 0;    % zenith angle pointing
+for i=1:N
+    E = E + power(i)*E0*exp(complex(0, (2*pi*ideal_d * (i-1) * sind(delta)/lambda + phase_n)));
+end
+
+% calculate ideal Array Pattern
+AF = (abs(sin(N * pi * idealRatio * sind(delta)) ./ sin(pi * idealRatio * sind(delta)))/N);
+    
+figure
+subplot(1,2,1)
+plot(delta,abs(E)/N,delta,AF);
+axis([-90 90 0 1])
+xlabel('incidence angle, 64 Elements, zenith pointing');
+ylabel('normalized radiation pattern');
+legend('triangular weighting','unweighted');
+subplot(1,2,2)
+antennaNum = [1:1:64];
+plot(antennaNum,power);
+grid on;
+axis([0 N 0 max(power)])
+xlabel('Antenna Element Number');
+ylabel('Unit Power Weighting');
