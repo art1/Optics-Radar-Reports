@@ -22,7 +22,8 @@ Scientific radar and radar frequencies. Derivation of Radar Equation, cross-sect
 
 submitted May, 2nd 2016,
 final version can be found [here](https://github.com/art1/Optics-Radar-Reports/blob/problem2_radar/Problem-2_Arthur-Scharf_General-Radar-Theory.pdf)
-!! corrected equations [here](https://github.com/art1/Optics-Radar-Reports/blob/problem2_radar/Problem-2_Arthur-Scharf_General-Radar-Theory_improved.pdf)
+
+!! corrected version with improved equations [here](https://github.com/art1/Optics-Radar-Reports/blob/problem2_radar/Problem-2_Arthur-Scharf_General-Radar-Theory_improved.pdf)
 
 ### [Problem 3](https://github.com/art1/Optics-Radar-Reports/blob/problem3/appendix/Problems%20Part%203%202016.pdf) - Propagation Effects & Targets
 Radar parameters and its effects on performance. Radar Cross Sections. HF & MF Atmospheric studies
